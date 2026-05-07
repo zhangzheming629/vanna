@@ -23,7 +23,9 @@
       "Bash(PYTHONPATH=\"d:/code/vanna/src\" timeout 60 python minimax_quickstart.py)",
       "Bash(findstr /n \"def register\" \"d:/code\\\\vanna\\\\src\\\\vanna\\\\core\\\\registry.py\")",
       "Bash(dir \"d:\\\\code\\\\vanna\\\\src\\\\vanna\\\\examples\\\\minimax_data\")",
-      "Bash(python -c \"import hashlib; print\\(hashlib.sha256\\('anonymous'.encode\\(\\)\\).hexdigest\\(\\)[:16]\\)\")"
+      "Bash(python -c \"import hashlib; print\\(hashlib.sha256\\('anonymous'.encode\\(\\)\\).hexdigest\\(\\)[:16]\\)\")",
+      "Bash(python minimax_sqlite_example.py)",
+      "Bash(python minimax_sqlllite.py)"
     ]
   }
 }
