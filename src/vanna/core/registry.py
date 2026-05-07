@@ -2,6 +2,14 @@
 Tool registry for the Vanna Agents framework.
 
 This module provides the ToolRegistry class for managing and executing tools.
+
+ToolRegistry = AI 工具的中央控制器
+注册工具
+权限控制
+参数校验
+审计日志
+统一执行
+安全管控
 """
 
 import time
@@ -78,6 +86,14 @@ class ToolRegistry:
         else:
             # No access restrictions, register as-is
             self._tools[tool.name] = tool
+
+    def register(self, tool: Tool[Any]) -> None:
+        """Register a tool without access restrictions.
+
+        Args:
+            tool: The tool to register
+        """
+        self.register_local_tool(tool, access_groups=[])
 
     async def get_tool(self, name: str) -> Optional[Tool[Any]]:
         """Get a tool by name."""
