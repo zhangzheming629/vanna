@@ -1,41 +1,41 @@
-| GitHub | PyPI | 文档 | Gurubase |
+
+
+| GitHub | PyPI | Documentation | Gurubase |
 | ------ | ---- | ------------- | -------- |
 | [![GitHub](https://img.shields.io/badge/GitHub-vanna-blue?logo=github)](https://github.com/vanna-ai/vanna) | [![PyPI](https://img.shields.io/pypi/v/vanna?logo=pypi)](https://pypi.org/project/vanna/) | [![Documentation](https://img.shields.io/badge/Documentation-vanna-blue?logo=read-the-docs)](https://vanna.ai/docs/) | [![Gurubase](https://img.shields.io/badge/Gurubase-Ask%20Vanna%20Guru-006BFF)](https://gurubase.io/g/vanna) |
 
 # Vanna
-
-Vanna 是一个 MIT 许可的开源 Python RAG（检索增强生成）框架，用于 SQL 生成和相关功能。
+Vanna is an MIT-licensed open-source Python RAG (Retrieval-Augmented Generation) framework for SQL generation and related functionality.
 
 https://github.com/vanna-ai/vanna/assets/7146154/1901f47a-515d-4982-af50-f12761a3b2ce
 
 ![vanna-quadrants](https://github.com/vanna-ai/vanna/assets/7146154/1c7c88ba-c144-4ecf-a028-cf5ba7344ca2)
 
-## Vanna 工作原理
+## How Vanna works
 
-![Screen Recording 2024-01-24 at 11 21 37 AM](https://github.com/vanna-ai/vanna/assets/7146154/1d2718ad-12a8-4a76-afa2-c61754462f93)
+![Screen Recording 2024-01-24 at 11 21 37 AM](https://github.com/vanna-ai/vanna/assets/7146154/1d2718ad-12a8-4a76-afa2-c61754462f93)
 
 
-Vanna 通过两个简单的步骤工作 - 在您的数据上训练一个 RAG"模型"，然后提问，这将返回可以设置为在您的数据库上自动运行的 SQL 查询。
+Vanna works in two easy steps - train a RAG "model" on your data, and then ask questions which will return SQL queries that can be set up to automatically run on your database.
 
-1. **在您的数据上训练一个 RAG"模型"**。
-2. **提问**。
+1. **Train a RAG "model" on your data**.
+2. **Ask questions**.
 
 ![](img/vanna-readme-diagram.png)
 
-如果您不知道 RAG 是什么，别担心 —— 您不需要知道它底层是如何工作的也能使用它。您只需要知道您"训练"了一个模型，它存储了一些元数据，然后使用它来"提问"。
+If you don't know what RAG is, don't worry -- you don't need to know how this works under the hood to use it. You just need to know that you "train" a model, which stores some metadata and then use it to "ask" questions.
 
-查看 [基类](https://github.com/vanna-ai/vanna/blob/main/src/vanna/base/base.py) 了解更多关于底层工作原理的详细信息。
+See the [base class](https://github.com/vanna-ai/vanna/blob/main/src/vanna/base/base.py) for more details on how this works under the hood.
 
-## 用户界面
-
-这些是我们使用 Vanna 构建的一些用户界面。您可以直接使用它们或作为您自己自定义界面的起点。
+## User Interfaces
+These are some of the user interfaces that we've built using Vanna. You can use these as-is or as a starting point for your own custom interface.
 
 - [Jupyter Notebook](https://vanna.ai/docs/postgres-openai-vanna-vannadb/)
 - [vanna-ai/vanna-streamlit](https://github.com/vanna-ai/vanna-streamlit)
 - [vanna-ai/vanna-flask](https://github.com/vanna-ai/vanna-flask)
 - [vanna-ai/vanna-slack](https://github.com/vanna-ai/vanna-slack)
 
-## 支持的 LLM
+## Supported LLMs
 
 - [OpenAI](https://github.com/vanna-ai/vanna/tree/main/src/vanna/openai)
 - [Anthropic](https://github.com/vanna-ai/vanna/tree/main/src/vanna/anthropic)
@@ -47,7 +47,7 @@ Vanna 通过两个简单的步骤工作 - 在您的数据上训练一个 RAG"模
 - [Qianfan](https://github.com/vanna-ai/vanna/tree/main/src/vanna/qianfan)
 - [Zhipu](https://github.com/vanna-ai/vanna/tree/main/src/vanna/ZhipuAI)
 
-## 支持的向量存储
+## Supported VectorStores
 
 - [AzureSearch](https://github.com/vanna-ai/vanna/tree/main/src/vanna/azuresearch)
 - [Opensearch](https://github.com/vanna-ai/vanna/tree/main/src/vanna/opensearch)
@@ -61,7 +61,7 @@ Vanna 通过两个简单的步骤工作 - 在您的数据上训练一个 RAG"模
 - [Weaviate](https://github.com/vanna-ai/vanna/tree/main/src/vanna/weaviate)
 - [Oracle](https://github.com/vanna-ai/vanna/tree/main/src/vanna/oracle)
 
-## 支持的数据库
+## Supported Databases
 
 - [PostgreSQL](https://www.postgresql.org/)
 - [MySQL](https://www.mysql.com/)
@@ -76,24 +76,24 @@ Vanna 通过两个简单的步骤工作 - 在您的数据上训练一个 RAG"模
 - [DuckDB](https://duckdb.org/)
 
 
-## 快速开始
+## Getting started
+See the [documentation](https://vanna.ai/docs/) for specifics on your desired database, LLM, etc.
 
-查看 [文档](https://vanna.ai/docs/) 了解您想要的数据库、LLM 等的具体信息。
+If you want to get a feel for how it works after training, you can try this [Colab notebook](https://vanna.ai/docs/app/).
 
-如果您想在训练后感受它的工作方式，可以尝试这个 [Colab notebook](https://vanna.ai/docs/app/)。
 
-### 安装
+### Install
 ```bash
 pip install vanna
 ```
 
-还有许多可选的包可以安装，请查看 [文档](https://vanna.ai/docs/) 了解更多详细信息。
+There are a number of optional packages that can be installed so see the [documentation](https://vanna.ai/docs/) for more details.
 
-### 导入
-如果您正在自定义 LLM 或向量数据库，请查看 [文档](https://vanna.ai/docs/)。
+### Import
+See the [documentation](https://vanna.ai/docs/) if you're customizing the LLM or vector database.
 
 ```python
-# 导入语句会因您的 LLM 和向量数据库而异。这是 OpenAI + ChromaDB 的示例
+# The import statement will vary depending on your LLM and vector database. This is an example for OpenAI + ChromaDB
 
 from vanna.openai.openai_chat import OpenAI_Chat
 from vanna.chromadb.chromadb_vector import ChromaDB_VectorStore
@@ -105,19 +105,18 @@ class MyVanna(ChromaDB_VectorStore, OpenAI_Chat):
 
 vn = MyVanna(config={'api_key': 'sk-...', 'model': 'gpt-4-...'})
 
-# 查看文档了解其他选项
+# See the documentation for other options
 
 ```
 
 
-## 训练
+## Training
+You may or may not need to run these `vn.train` commands depending on your use case. See the [documentation](https://vanna.ai/docs/) for more details.
 
-根据您的用例，您可能需要或不需要运行这些 `vn.train` 命令。请查看 [文档](https://vanna.ai/docs/) 了解更多详细信息。
+These statements are shown to give you a feel for how it works.
 
-这些语句是为了让您感受它是如何工作的。
-
-### 使用 DDL 语句训练
-DDL 语句包含关于您数据库中的表名、列、数据类型和关系的信息。
+### Train with DDL Statements
+DDL statements contain information about the table names, columns, data types, and relationships in your database.
 
 ```python
 vn.train(ddl="""
@@ -129,27 +128,27 @@ vn.train(ddl="""
 """)
 ```
 
-### 使用文档训练
-有时您可能想添加关于您的业务术语或定义的文档。
+### Train with Documentation
+Sometimes you may want to add documentation about your business terminology or definitions.
 
 ```python
 vn.train(documentation="Our business defines XYZ as ...")
 ```
 
-### 使用 SQL 训练
-您也可以将 SQL 查询添加到您的训练数据。如果您已经有了一些查询，这很有用。您可以直接从编辑器复制粘贴，开始生成新的 SQL。
+### Train with SQL
+You can also add SQL queries to your training data. This is useful if you have some queries already laying around. You can just copy and paste those from your editor to begin generating new SQL.
 
 ```python
 vn.train(sql="SELECT name, age FROM my-table WHERE name = 'John Doe'")
 ```
 
 
-## 提问
+## Asking questions
 ```python
 vn.ask("What are the top 10 customers by sales?")
 ```
 
-您将获得 SQL
+You'll get SQL
 ```sql
 SELECT c.c_name as customer_name,
         sum(l.l_extendedprice * (1 - l.l_discount)) as total_sales
@@ -160,7 +159,7 @@ GROUP BY customer_name
 ORDER BY total_sales desc limit 10;
 ```
 
-如果您已连接到数据库，您将获得表格：
+If you've connected to a database, you'll get the table:
 <div>
 <table border="1" class="dataframe">
   <thead>
@@ -225,48 +224,47 @@ ORDER BY total_sales desc limit 10;
 </table>
 </div>
 
-您还将获得一个自动生成的 Plotly 图表：
+You'll also get an automated Plotly chart:
 ![](img/top-10-customers.png)
 
-## RAG 与微调
+## RAG vs. Fine-Tuning
 RAG
-- 可跨 LLM 移植
-- 如果任何训练数据过时，很容易删除
-- 运行成本比微调低得多
-- 更面向未来 —— 如果有更好的 LLM 出现，您可以随时替换
+- Portable across LLMs
+- Easy to remove training data if any of it becomes obsolete
+- Much cheaper to run than fine-tuning
+- More future-proof -- if a better LLM comes out, you can just swap it out
 
-微调
-- 如果您需要最小化提示中的 token，这很好
-- 启动慢
-- 训练和运行成本高（通常）
+Fine-Tuning
+- Good if you need to minimize tokens in the prompt
+- Slow to get started
+- Expensive to train and run (generally)
 
-## 为什么选择 Vanna？
+## Why Vanna?
 
-1. **在复杂数据集上具有高准确性。**
-    - Vanna 的能力取决于您提供的训练数据
-    - 更多的训练数据意味着在大型和复杂数据集上更好的准确性
-2. **安全且私密。**
-    - 您的数据库内容永远不会发送到 LLM 或向量数据库
-    - SQL 执行发生在您的本地环境中
-3. **自学。**
-    - 如果通过 Jupyter 使用，您可以选择"自动训练"成功执行的查询
-    - 如果通过其他界面使用，您可以让界面提示用户对结果提供反馈
-    - 正确的问答对会被存储以供将来参考，并使未来的结果更准确
-4. **支持任何 SQL 数据库。**
-    - 该包允许您连接到您可以用 Python 连接的任何 SQL 数据库
-5. **选择您的前端。**
-    - 大多数人在 Jupyter Notebook 中开始
-    - 通过 Slackbot、Web 应用、Streamlit 应用或自定义前端向您的最终用户公开
+1. **High accuracy on complex datasets.**
+    - Vanna’s capabilities are tied to the training data you give it
+    - More training data means better accuracy for large and complex datasets
+2. **Secure and private.**
+    - Your database contents are never sent to the LLM or the vector database
+    - SQL execution happens in your local environment
+3. **Self learning.**
+    - If using via Jupyter, you can choose to "auto-train" it on the queries that were successfully executed
+    - If using via other interfaces, you can have the interface prompt the user to provide feedback on the results
+    - Correct question to SQL pairs are stored for future reference and make the future results more accurate
+4. **Supports any SQL database.**
+    - The package allows you to connect to any SQL database that you can otherwise connect to with Python
+5. **Choose your front end.**
+    - Most people start in a Jupyter Notebook.
+    - Expose to your end users via Slackbot, web app, Streamlit app, or a custom front end.
 
-## 扩展 Vanna
-Vanna 旨在连接到任何数据库、LLM 和向量数据库。有一个 [VannaBase](https://github.com/vanna-ai/vanna/blob/main/src/vanna/base/base.py) 抽象基类定义了一些基本功能。该包提供了与 OpenAI 和 ChromaDB 一起使用的实现。您可以轻松扩展 Vanna 以使用您自己的 LLM 或向量数据库。请查看 [文档](https://vanna.ai/docs/) 了解更多详细信息。
+## Extending Vanna
+Vanna is designed to connect to any database, LLM, and vector database. There's a [VannaBase](https://github.com/vanna-ai/vanna/blob/main/src/vanna/base/base.py) abstract base class that defines some basic functionality. The package provides implementations for use with OpenAI and ChromaDB. You can easily extend Vanna to use your own LLM or vector database. See the [documentation](https://vanna.ai/docs/) for more details.
 
-## 100 秒了解 Vanna
+## Vanna in 100 Seconds
 
 https://github.com/vanna-ai/vanna/assets/7146154/eb90ee1e-aa05-4740-891a-4fc10e611cab
 
-## 更多资源
-
- - [完整文档](https://vanna.ai/docs/)
- - [网站](https://vanna.ai)
- - [支持 Discord 群](https://discord.gg/qUZYKHremx)
+## More resources
+ - [Full Documentation](https://vanna.ai/docs/)
+ - [Website](https://vanna.ai)
+ - [Discord group for support](https://discord.gg/qUZYKHremx)
