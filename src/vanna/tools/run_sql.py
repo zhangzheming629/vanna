@@ -88,6 +88,7 @@ class RunSqlTool(Tool[RunSqlToolArgs]):
                     row_count = len(df)
 
                     # Write DataFrame to CSV file for downstream tools
+                    # 每次 SQL 查询都生成唯一的文件 ID( 只取 UUID 的前 8 位)，防止同名文件覆盖
                     file_id = str(uuid.uuid4())[:8]
                     filename = f"query_results_{file_id}.csv"
                     csv_content = df.to_csv(index=False)

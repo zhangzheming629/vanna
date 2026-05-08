@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file \"d:/code/vanna/src/vanna/examples/e606e38b0d8c19b2\"/*)"
+    ]
+  }
+}

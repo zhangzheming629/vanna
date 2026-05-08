@@ -148,6 +148,9 @@ async def main() -> None:
     agent_memory = DemoAgentMemory()
 
     # User resolver
+    # SQL 查询结果(run_sql.py:91-96)需要保存为 CSV 文件,每次执行 SELECT 查询时，RunSqlTool 会将结果保存为 CSV 文件
+    # user_hash = hashlib.sha256(context.user.id.encode()).hexdigest()[:16]
+    # "user123" → "e606e38b0d8c19b2"
     class SimpleUserResolver(UserResolver):
         async def resolve_user(self, context: RequestContext) -> User:
             return User(id="user123", username="testuser")
