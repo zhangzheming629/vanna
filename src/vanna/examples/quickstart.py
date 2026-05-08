@@ -1,11 +1,11 @@
 """
-MiniMax example using AnthropicLlmService with MiniMax endpoint.
+Vanna example using AnthropicLlmService
 
-Loads environment from .env, uses model 'MiniMax-M2.1' by default.
+Loads environment from .env
 
 Run:
   cd d:/code/vanna/src/vanna/examples
-  python minimax_quickstart.py
+  python quickstart.py
 """
 
 import asyncio
@@ -62,9 +62,9 @@ async def main() -> None:
     base_url = os.getenv("ANTHROPIC_BASE_URL", "https://api.minimaxi.com/anthropic")
     api_key = os.getenv("ANTHROPIC_AUTH_TOKEN")
 
-    print(f"MiniMax Model: {model}")
+    print(f"Model: {model}")
     print(f"Base URL: {base_url}")
-    print("\n=== MiniMax Agent Demo ===\n")
+    print("\n=== Agent Demo ===\n")
 
     from vanna import AgentConfig, Agent, User
     from vanna.integrations.anthropic import AnthropicLlmService
@@ -75,7 +75,7 @@ async def main() -> None:
     from vanna.core.user import UserResolver, RequestContext
 
     llm = AnthropicLlmService(model=model, api_key=api_key, base_url=base_url)
-    file_system = LocalFileSystem("./minimax_data")
+    file_system = LocalFileSystem("./data")
     tool_registry = ToolRegistry()
     # 注册文件操作工具
     tool_registry.register(ListFilesTool(file_system=file_system))
@@ -89,7 +89,7 @@ async def main() -> None:
     # anonymous → SHA256 哈希 → 2f183a4e64493af3
 
     #     目录结构
-    # minimax_data/
+    # data/
     # ├── 2f183a4e64493af3/    # 用户 "anonymous" 的目录
     # │   └── 午饭清单.md       # 创建的文件
     # ├── [其他用户hash]/       # 其他用户的目录
@@ -125,7 +125,7 @@ async def main() -> None:
     async for component in agent.send_message(
         request_context=request_context,
         message=question,
-        conversation_id="minimax-demo",
+        conversation_id="demo",
     ):
         rich = getattr(component, "rich_component", None)
         if rich:

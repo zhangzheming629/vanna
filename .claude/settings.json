@@ -25,7 +25,8 @@
       "Bash(dir \"d:\\\\code\\\\vanna\\\\src\\\\vanna\\\\examples\\\\minimax_data\")",
       "Bash(python -c \"import hashlib; print\\(hashlib.sha256\\('anonymous'.encode\\(\\)\\).hexdigest\\(\\)[:16]\\)\")",
       "Bash(python minimax_sqlite_example.py)",
-      "Bash(python minimax_sqlllite.py)"
+      "Bash(python minimax_sqlllite.py)",
+      "Bash(python minimax_postgres_example.py)"
     ]
   }
 }

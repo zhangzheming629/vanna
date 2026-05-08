@@ -309,3 +309,12 @@ MIT 许可证 — 查看 [LICENSE](LICENSE) 了解详情。
 ---
 
 **用 ❤️ 由 Vanna 团队构建** | [网站](https://vanna.ai) | [文档](https://vanna.ai/docs) | [讨论](https://github.com/vanna-ai/vanna/discussions)
+
+
+
+## 下载依赖
+```
+pip install python-dotenv
+
+pip install 'vanna[anthropic,fastapi,postgres]'
+```

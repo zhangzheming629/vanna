@@ -1,12 +1,12 @@
 """
-MiniMax SQLite example using SQLite database.
+Vanna SQLite example using SQLite database.
 
-Uses MiniMax LLM with SQLite database.
+Uses LLM with SQLite database.
 This example demonstrates SQL queries with SQLite database.
 
 Run:
   cd d:/code/vanna/src/vanna/examples
-  python minimax_sqllite.py
+  python sqllite.py
 """
 
 import asyncio
@@ -51,9 +51,9 @@ async def main() -> None:
     base_url = os.getenv("ANTHROPIC_BASE_URL", "https://api.minimaxi.com/anthropic")
     api_key = os.getenv("ANTHROPIC_AUTH_TOKEN")
 
-    print(f"MiniMax Model: {model}")
+    print(f"Model: {model}")
     print(f"Base URL: {base_url}")
-    print("\n=== MiniMax SQLite Demo ===\n")
+    print("\n=== SQLite Demo ===\n")
 
     from vanna import AgentConfig, Agent, User
     from vanna.integrations.anthropic import AnthropicLlmService
@@ -136,7 +136,7 @@ async def main() -> None:
 
     print(f"Using database: {db_path}\n")
 
-    # Create MiniMax LLM service
+    # Create LLM service
     llm = AnthropicLlmService(model=model, api_key=api_key, base_url=base_url)
 
     # Create SQLite runner and tool
