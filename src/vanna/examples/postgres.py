@@ -58,11 +58,11 @@ def get_postgres_connection():
     password = os.getenv("PG_PASSWORD", "")
     database = os.getenv("PG_DATABASE", "postgres")
 
-    # Build connection URL
+    # Build connection URL (psycopg2 format)
     if password:
-        conn_url = f"postgresql+asyncpg://{user}:{password}@{host}:{port}/{database}"
+        conn_url = f"postgresql://{user}:{password}@{host}:{port}/{database}"
     else:
-        conn_url = f"postgresql+asyncpg://{user}@{host}:{port}/{database}"
+        conn_url = f"postgresql://{user}@{host}:{port}/{database}"
 
     return conn_url
 
@@ -109,12 +109,15 @@ async def main() -> None:
 
     # Create PostgreSQL runner with schema support
     try:
+        # postgres_runner = PostgresRunner(
+        #     host=pg_host,
+        #     port=pg_port,
+        #     database=pg_database,
+        #     user=os.getenv("PG_USER"),
+        #     password=os.getenv("PG_PASSWORD"),
+        # )
         postgres_runner = PostgresRunner(
-            host=pg_host,
-            port=pg_port,
-            database=pg_database,
-            user=os.getenv("PG_USER"),
-            password=os.getenv("PG_PASSWORD"),
+            connection_string=get_postgres_connection()
         )
     except Exception as e:
         print(f"Error connecting to PostgreSQL: {e}")
